@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 27.06.2025
+    // LeetCode
+    // найти в массиве nums два числа которые в сумме дают target и вывести их индексы
+    //function twoSum(nums: number[], target: number): number[] { 
+    function twoSum(nums, target) {                         // чтобы не ругался на отсутствие ts
+      for (let i = 0; i - 1 < nums.length; i++) {           // перебираем все элементы по очереди
+        for (let j = i + 1; j < nums.length; j++) {         // для каждого элемента первого цикла перебираем оставшиеся элементы
+          if (nums[i] + nums[j] === target) {               // проверка условия
+            return [i, j]
+          }
+        }
+      }
+    };
+  </script>
+</body>
+
+</html>
