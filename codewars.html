@@ -52,6 +52,14 @@
     function twoDecimalPlaces(n) {
       return parseFloat(n.toFixed(2))
     }
+
+    function reverseWords(str) {
+      array = str.split(' ')
+      for (let i = 0; i < array.length; i++) {
+        array[i] = array[i].split('').reverse().join('')
+      }
+      return array.join(' ')
+    }
   </script>
 </body>
 
