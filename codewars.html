@@ -60,6 +60,18 @@
       }
       return array.join(' ')
     }
+
+    // 06.07.25
+    // min number
+    function findSmallestInt1(arr) {
+      let minNumber = arr[0]
+      for (let i = 1; i < arr.length; i++) {
+        if (minNumber > arr[i]) {
+          minNumber = arr[i]
+        }
+      }
+      return minNumber;
+    }
   </script>
 </body>
 
