@@ -112,6 +112,18 @@
     function numberToString(num) {
       return '' + num
     }
+
+    // 16.07.25
+    // отфильтровать number
+    function filter_list(l) {
+      let result = []
+      for (let i = 0; i < l.length; i++) {
+        if (typeof (l[i]) === 'number') {
+          result.push(l[i])
+        }
+      }
+      return result
+    }
   </script>
 </body>
 
