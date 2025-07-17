@@ -124,6 +124,18 @@
       }
       return result
     }
+
+    // 17.07.25
+    // удалить "!" с конца каждого слова
+    function remove(string) {
+      const arrayStr = string.split(' ')
+      for (let i = 0; i < arrayStr.length; i++) {
+        while (arrayStr[i].endsWith("!")) {
+          arrayStr[i] = arrayStr[i].slice(0, -1)
+        }
+      }
+      return arrayStr.join(' ');
+    }
   </script>
 </body>
 
