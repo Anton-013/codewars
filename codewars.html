@@ -136,6 +136,11 @@
       }
       return arrayStr.join(' ');
     }
+
+    // отфильтровать массив по условию
+    function reject(array, predicate) {
+      return array.filter(elem => !predicate(elem));
+    }
   </script>
 </body>
 
