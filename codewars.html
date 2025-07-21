@@ -141,6 +141,25 @@
     function reject(array, predicate) {
       return array.filter(elem => !predicate(elem));
     }
+
+    // задуть свечи
+    function blowCandles(str) {
+      const array = str.split('').map(Number)
+      let result = 0
+      for (let i = 0; i < array.length; i++) {
+        while (array[i] !== 0) {
+          result++
+          array[i]--
+          if (array[i + 1] !== 0 && i + 1 < array.length) {
+            array[i + 1]--
+          }
+          if (array[i + 2] !== 0 && i + 2 < array.length) {
+            array[i + 2]--
+          }
+        }
+      }
+      return result
+    }
   </script>
 </body>
 
