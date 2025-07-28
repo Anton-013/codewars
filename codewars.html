@@ -181,6 +181,16 @@
       }
       return count
     }
+
+    // 28.07.25
+    // удалить из массива элементы которые встречаются более n раз
+    function deleteNth(arr, n) {
+      const count = {}
+      return arr.filter(num => {
+        count[num] = (count[num] || 0) + 1
+        return count[num] <= n
+      })
+    }
   </script>
 </body>
 
