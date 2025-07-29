@@ -191,6 +191,20 @@
         return count[num] <= n
       })
     }
+
+    // 29.07.25
+    // 
+    function missingWord(nums, str) {
+      const newStr = str.split(' ').join('').toLowerCase()
+      nums.sort((a, b) => a - b)
+
+      for (const num of nums) {
+        if (num >= newStr.length || num < 0) {
+          return 'No mission today'
+        }
+      }
+      return nums.map(num => newStr[num]).join('')
+    }
   </script>
 </body>
 
