@@ -205,6 +205,18 @@
       }
       return nums.map(num => newStr[num]).join('')
     }
+
+    // 30.07.25
+    // дана строка и массив, раставить символы в строке как дано в массиве
+    function scramble(str, arr) {
+      let resultArr = []
+      for (i = 0; i < arr.length; i++) {
+        resultArr[arr[i]] = str[i]
+      }
+      const resultStr = resultArr.join('')
+      return resultStr
+    }
+    console.log(scramble("abcd", [0, 3, 1, 2]))
   </script>
 </body>
 
