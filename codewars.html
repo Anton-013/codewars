@@ -216,7 +216,21 @@
       const resultStr = resultArr.join('')
       return resultStr
     }
-    console.log(scramble("abcd", [0, 3, 1, 2]))
+
+    // 01.08.25
+    // посчитать количество делителей числа n
+    // после корня от n пары делителей будут повторяться, по этому достаточно проверять только делители до корня от n
+    function getDivisorsCnt(n) {
+      let res = 0
+      const sqrtN = Math.sqrt(n)
+      for (let i = 1; i <= sqrtN; i++) {
+        if (n % i === 0) {
+          res += (i === n / i) ? 1 : 2
+        }
+      }
+      return res
+    }
+    console.log('123')
   </script>
 </body>
 
