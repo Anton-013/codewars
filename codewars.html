@@ -230,7 +230,15 @@
       }
       return res
     }
-    console.log('123')
+
+    // 02.08.25
+    // написать функцию которая проверяет является ли строка пантограммой
+    function isPangram(string) {
+      const array = string.toLowerCase().replace(/[^a-z]/g, '').split('')
+      const uniqueArray = new Set(array)
+      return uniqueArray.size === 26
+    }
+    console.log(isPangram('alkfdalkjf! alkdfj;lcv?ja;ldskjf, !!!s!!!! sjfdalk. aldsfkj.'))
   </script>
 </body>
 
