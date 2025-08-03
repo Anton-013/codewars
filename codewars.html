@@ -238,6 +238,16 @@
       const uniqueArray = new Set(array)
       return uniqueArray.size === 26
     }
+
+    // 03.08.25
+    // 
+    function countBy(x, n) {
+      let z = [];
+      for (let i = 1; i <= n; i++) {
+        z.push(x * i)
+      }
+      return z;
+    }
     console.log(isPangram('alkfdalkjf! alkdfj;lcv?ja;ldskjf, !!!s!!!! sjfdalk. aldsfkj.'))
   </script>
 </body>
