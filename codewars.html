@@ -248,6 +248,20 @@
       }
       return z;
     }
+
+    // 04.08.25
+    // сколько людей в автобусе
+    var number = function (busStops) {
+      // мой вариант
+      // let result = 0
+      // for (let i = 0; i < busStops.length; i++) {
+      //   result += busStops[i][0] - busStops[i][1]
+      // }
+      // return result
+
+      // через ИИ
+      return busStops.reduce((total, [on, off]) => total + on - off, 0)
+    }
     console.log(isPangram('alkfdalkjf! alkdfj;lcv?ja;ldskjf, !!!s!!!! sjfdalk. aldsfkj.'))
   </script>
 </body>
