@@ -267,6 +267,19 @@
     function getAge(inputString) {
       return Number(inputString[0])
     }
+
+    // 07.08.25
+    // посчитать через сколько лет популяция людей достигнет нужной
+    function nbYear(p0, percent, aug, p) {
+      let people = p0
+      let count = 0
+      const per = percent / 100
+      while (people < p) {
+        count++
+        people = Math.floor(people + people * per + aug)
+      }
+      return count
+    }
     console.log(isPangram('alkfdalkjf! alkdfj;lcv?ja;ldskjf, !!!s!!!! sjfdalk. aldsfkj.'))
   </script>
 </body>
