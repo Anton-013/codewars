@@ -280,7 +280,25 @@
       }
       return count
     }
-    console.log(isPangram('alkfdalkjf! alkdfj;lcv?ja;ldskjf, !!!s!!!! sjfdalk. aldsfkj.'))
+
+    // 09.08.25
+    // какое время проведут люди в очереди
+    function queueTime(customers, n) {
+      
+      // массив касс
+      const cashRegisterArray = []
+      for (let i = 0; i < n; i++) {
+        cashRegisterArray.push(0)
+      }
+
+      // находим минимальное значение, и добавляем туда следующего человека в очереди
+      for (const time of customers) {
+        const minIndex = cashRegisterArray.indexOf(Math.min(...cashRegisterArray))
+        cashRegisterArray[minIndex] += time
+      }
+      return Math.max(...cashRegisterArray)
+    }
+    queueTime([1, 2, 3, 10, 2, 1, 1, 1, 1, 30, 30], 10)
   </script>
 </body>
 
