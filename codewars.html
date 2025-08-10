@@ -284,7 +284,7 @@
     // 09.08.25
     // какое время проведут люди в очереди
     function queueTime(customers, n) {
-      
+
       // массив касс
       const cashRegisterArray = []
       for (let i = 0; i < n; i++) {
@@ -297,6 +297,11 @@
         cashRegisterArray[minIndex] += time
       }
       return Math.max(...cashRegisterArray)
+    }
+
+    // 10.08.25
+    function checkForFactor(base, factor) {
+      return base % factor === 0 ? true : false
     }
     queueTime([1, 2, 3, 10, 2, 1, 1, 1, 1, 30, 30], 10)
   </script>
