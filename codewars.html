@@ -303,6 +303,12 @@
     function checkForFactor(base, factor) {
       return base % factor === 0 ? true : false
     }
+
+    // 11.08.25
+    // если в массиве a хотябы один элемент равен или больше limit вернуть false иначе true
+    function smallEnough(a, limit) {
+      return Math.max(...a) <= limit
+    }
     queueTime([1, 2, 3, 10, 2, 1, 1, 1, 1, 30, 30], 10)
   </script>
 </body>
