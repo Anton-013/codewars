@@ -309,6 +309,16 @@
     function smallEnough(a, limit) {
       return Math.max(...a) <= limit
     }
+
+    // 13.08.25
+    // поменять регистр букв в строке
+    String.prototype.toAlternatingCase = function () {
+      return this.split('').map(item => {
+        if (/[a-z]/.test(item)) return item.toUpperCase()
+        if (/[A-Z]/.test(item)) return item.toLowerCase()
+        return item
+      }).join('')
+    }
     queueTime([1, 2, 3, 10, 2, 1, 1, 1, 1, 30, 30], 10)
   </script>
 </body>
