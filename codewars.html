@@ -319,6 +319,31 @@
         return item
       }).join('')
     }
+
+    // 14.08.25 
+    // LeetCode
+    // Наибоьшее число из трёх одинаковых цифр в строке
+    function largestGoodInteger() {
+      const arrayNums = []
+      for (let i = 2; i < num.length; i++) {
+        if (num[i] === num[i - 2] && num[i] === num[i - 1]) {
+          arrayNums.push(num[i])
+        }
+      }
+      if (arrayNums.length === 0) {
+        return ''
+      }
+      if (arrayNums.length === 1) {
+        return arrayNums[0] + arrayNums[0] + arrayNums[0]
+      }
+      let result = arrayNums[0]
+      for (let i = 1; i < arrayNums.length; i++) {
+        if (parseInt(result) < parseInt(arrayNums[i])) {
+          result = arrayNums[i]
+        }
+      }
+      return result + result + result
+    };
     queueTime([1, 2, 3, 10, 2, 1, 1, 1, 1, 30, 30], 10)
   </script>
 </body>
