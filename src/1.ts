@@ -27,3 +27,10 @@ function merge(nums1: number[], m: number, nums2: number[], n: number): void {
 function digitize(n: any) {
   return n.toString().split("").reverse().map(Number);
 }
+
+let sortArray = function (value: any) {
+  return value
+    .split("")
+    .sort((c: any, p: any) => c - p)
+    .join("");
+};
