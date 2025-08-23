@@ -1,351 +1,379 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-
-<body>
-  <script>
-    // 27.06.2025
-    // LeetCode
-    // найти в массиве nums два числа которые в сумме дают target и вывести их индексы
-    //function twoSum(nums: number[], target: number): number[] { 
-    function twoSum(nums, target) {                         // чтобы не ругался на отсутствие ts
-      for (let i = 0; i - 1 < nums.length; i++) {           // перебираем все элементы по очереди
-        for (let j = i + 1; j < nums.length; j++) {         // для каждого элемента первого цикла перебираем оставшиеся элементы
-          if (nums[i] + nums[j] === target) {               // проверка условия
-            return [i, j]
+  <body>
+    <script>
+      // 27.06.2025
+      // LeetCode
+      // найти в массиве nums два числа которые в сумме дают target и вывести их индексы
+      //function twoSum(nums: number[], target: number): number[] {
+      function twoSum(nums, target) {
+        // чтобы не ругался на отсутствие ts
+        for (let i = 0; i - 1 < nums.length; i++) {
+          // перебираем все элементы по очереди
+          for (let j = i + 1; j < nums.length; j++) {
+            // для каждого элемента первого цикла перебираем оставшиеся элементы
+            if (nums[i] + nums[j] === target) {
+              // проверка условия
+              return [i, j];
+            }
           }
         }
       }
-    };
 
-    // 29.06.2025
-    // CodeWars
-    // Напишите функцию, которая проверяет, является ли заданная строка (без учета регистра) палиндромом.
-    // Палиндром — это слово, число, фраза или другая последовательность символов, 
-    // которая читается одинаково как в прямом, так и в обратном порядке, например, «мадам».
-    function isPalindrome(x) {
-      strLowerCase = x.toLowerCase()
-      return strLowerCase === strLowerCase.split('').reverse().join('')
-    }
-
-    // 02.07.2025
-    //CodeWars
-    // Third Angle of a Triangle
-    function otherAngle(a, b) {
-      return 180 - (a + b);
-    }
-
-    // 03.07.2025
-    // Given a set of numbers, return the additive inverse of each.
-    // Each positive becomes negatives, and the negatives become positives.
-    function invert(array) {
-      return array.map(el => el * -1)
-    }
-
-    // 04.07.2025
-    // округлить число до 2-ух знаков после запятой
-    function twoDecimalPlaces(n) {
-      return parseFloat(n.toFixed(2))
-    }
-
-    function reverseWords(str) {
-      array = str.split(' ')
-      for (let i = 0; i < array.length; i++) {
-        array[i] = array[i].split('').reverse().join('')
+      // 29.06.2025
+      // CodeWars
+      // Напишите функцию, которая проверяет, является ли заданная строка (без учета регистра) палиндромом.
+      // Палиндром — это слово, число, фраза или другая последовательность символов,
+      // которая читается одинаково как в прямом, так и в обратном порядке, например, «мадам».
+      function isPalindrome(x) {
+        strLowerCase = x.toLowerCase();
+        return strLowerCase === strLowerCase.split("").reverse().join("");
       }
-      return array.join(' ')
-    }
 
-    // 06.07.25
-    // min number
-    function findSmallestInt1(arr) {
-      let minNumber = arr[0]
-      for (let i = 1; i < arr.length; i++) {
-        if (minNumber > arr[i]) {
-          minNumber = arr[i]
+      // 02.07.2025
+      //CodeWars
+      // Third Angle of a Triangle
+      function otherAngle(a, b) {
+        return 180 - (a + b);
+      }
+
+      // 03.07.2025
+      // Given a set of numbers, return the additive inverse of each.
+      // Each positive becomes negatives, and the negatives become positives.
+      function invert(array) {
+        return array.map((el) => el * -1);
+      }
+
+      // 04.07.2025
+      // округлить число до 2-ух знаков после запятой
+      function twoDecimalPlaces(n) {
+        return parseFloat(n.toFixed(2));
+      }
+
+      function reverseWords(str) {
+        array = str.split(" ");
+        for (let i = 0; i < array.length; i++) {
+          array[i] = array[i].split("").reverse().join("");
         }
+        return array.join(" ");
       }
-      return minNumber;
-    }
 
-    // 07.07.25
-    // Complete the function which takes two arguments
-    // and returns all numbers which are divisible by the given divisor.
-    // First argument is an array of numbers and the second is the divisor.
-    function divisibleBy(numbers, divisor) {
-      const result = []
-      for (let i = 0; i < numbers.length; i++) {
-        if (numbers[i] % divisor === 0) {
-          result.push(numbers[i])
-        }
-      }
-      return result
-    }
-
-    // 09.07.25
-    // Your task is to make a function that can take any non-negative
-    // integer as an argument and return it with its digits in descending order.
-    // Essentially, rearrange the digits to create the highest possible number.
-    function descendingOrder(n) {
-      return parseInt(n.toString().split('').sort().reverse().join(''))
-    }
-
-    // 10.07.25
-    // преобразование в двоичную систему
-    function addBinary(a, b) {
-      return (a + b).toString(2)
-    }
-
-    // 12.07.25
-    // перевести в миллисекунды
-    function past(h, m, s) {
-      return s * 1000 + m * 60 * 1000 + h * 60 * 60 * 1000
-    }
-
-    // 13.07.25
-    // вывести строку
-    function numberToString(num) {
-      return '' + num
-    }
-
-    // 16.07.25
-    // отфильтровать number
-    function filter_list(l) {
-      let result = []
-      for (let i = 0; i < l.length; i++) {
-        if (typeof (l[i]) === 'number') {
-          result.push(l[i])
-        }
-      }
-      return result
-    }
-
-    // 17.07.25
-    // удалить "!" с конца каждого слова
-    function remove(string) {
-      const arrayStr = string.split(' ')
-      for (let i = 0; i < arrayStr.length; i++) {
-        while (arrayStr[i].endsWith("!")) {
-          arrayStr[i] = arrayStr[i].slice(0, -1)
-        }
-      }
-      return arrayStr.join(' ');
-    }
-
-    // отфильтровать массив по условию
-    function reject(array, predicate) {
-      return array.filter(elem => !predicate(elem));
-    }
-
-    // задуть свечи
-    function blowCandles(str) {
-      const array = str.split('').map(Number)
-      let result = 0
-      for (let i = 0; i < array.length; i++) {
-        while (array[i] !== 0) {
-          result++
-          array[i]--
-          if (array[i + 1] !== 0 && i + 1 < array.length) {
-            array[i + 1]--
-          }
-          if (array[i + 2] !== 0 && i + 2 < array.length) {
-            array[i + 2]--
+      // 06.07.25
+      // min number
+      function findSmallestInt1(arr) {
+        let minNumber = arr[0];
+        for (let i = 1; i < arr.length; i++) {
+          if (minNumber > arr[i]) {
+            minNumber = arr[i];
           }
         }
+        return minNumber;
       }
-      return result
-    }
 
-    // 23.07.25
-    // вывести строку
-    function switchItUp(number) {
-      const array = ['Zero', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine']
-      return array[number]
-    }
+      // 07.07.25
+      // Complete the function which takes two arguments
+      // and returns all numbers which are divisible by the given divisor.
+      // First argument is an array of numbers and the second is the divisor.
+      function divisibleBy(numbers, divisor) {
+        const result = [];
+        for (let i = 0; i < numbers.length; i++) {
+          if (numbers[i] % divisor === 0) {
+            result.push(numbers[i]);
+          }
+        }
+        return result;
+      }
 
-    // 27.07.25
-    // посчитать овец
-    function countSheeps(sheep) {
+      // 09.07.25
+      // Your task is to make a function that can take any non-negative
+      // integer as an argument and return it with its digits in descending order.
+      // Essentially, rearrange the digits to create the highest possible number.
+      function descendingOrder(n) {
+        return parseInt(n.toString().split("").sort().reverse().join(""));
+      }
 
-      let count = 0;
+      // 10.07.25
+      // преобразование в двоичную систему
+      function addBinary(a, b) {
+        return (a + b).toString(2);
+      }
 
-      for (let i = 0; i < sheep.length; i++) {
-        if (sheep[i] === true) {
+      // 12.07.25
+      // перевести в миллисекунды
+      function past(h, m, s) {
+        return s * 1000 + m * 60 * 1000 + h * 60 * 60 * 1000;
+      }
+
+      // 13.07.25
+      // вывести строку
+      function numberToString(num) {
+        return "" + num;
+      }
+
+      // 16.07.25
+      // отфильтровать number
+      function filter_list(l) {
+        let result = [];
+        for (let i = 0; i < l.length; i++) {
+          if (typeof l[i] === "number") {
+            result.push(l[i]);
+          }
+        }
+        return result;
+      }
+
+      // 17.07.25
+      // удалить "!" с конца каждого слова
+      function remove(string) {
+        const arrayStr = string.split(" ");
+        for (let i = 0; i < arrayStr.length; i++) {
+          while (arrayStr[i].endsWith("!")) {
+            arrayStr[i] = arrayStr[i].slice(0, -1);
+          }
+        }
+        return arrayStr.join(" ");
+      }
+
+      // отфильтровать массив по условию
+      function reject(array, predicate) {
+        return array.filter((elem) => !predicate(elem));
+      }
+
+      // задуть свечи
+      function blowCandles(str) {
+        const array = str.split("").map(Number);
+        let result = 0;
+        for (let i = 0; i < array.length; i++) {
+          while (array[i] !== 0) {
+            result++;
+            array[i]--;
+            if (array[i + 1] !== 0 && i + 1 < array.length) {
+              array[i + 1]--;
+            }
+            if (array[i + 2] !== 0 && i + 2 < array.length) {
+              array[i + 2]--;
+            }
+          }
+        }
+        return result;
+      }
+
+      // 23.07.25
+      // вывести строку
+      function switchItUp(number) {
+        const array = [
+          "Zero",
+          "One",
+          "Two",
+          "Three",
+          "Four",
+          "Five",
+          "Six",
+          "Seven",
+          "Eight",
+          "Nine",
+        ];
+        return array[number];
+      }
+
+      // 27.07.25
+      // посчитать овец
+      function countSheeps(sheep) {
+        let count = 0;
+
+        for (let i = 0; i < sheep.length; i++) {
+          if (sheep[i] === true) {
+            count++;
+          }
+        }
+        return count;
+      }
+
+      // 28.07.25
+      // удалить из массива элементы которые встречаются более n раз
+      function deleteNth(arr, n) {
+        const count = {};
+        return arr.filter((num) => {
+          count[num] = (count[num] || 0) + 1;
+          return count[num] <= n;
+        });
+      }
+
+      // 29.07.25
+      //
+      function missingWord(nums, str) {
+        const newStr = str.split(" ").join("").toLowerCase();
+        nums.sort((a, b) => a - b);
+
+        for (const num of nums) {
+          if (num >= newStr.length || num < 0) {
+            return "No mission today";
+          }
+        }
+        return nums.map((num) => newStr[num]).join("");
+      }
+
+      // 30.07.25
+      // дана строка и массив, раставить символы в строке как дано в массиве
+      function scramble(str, arr) {
+        let resultArr = [];
+        for (i = 0; i < arr.length; i++) {
+          resultArr[arr[i]] = str[i];
+        }
+        const resultStr = resultArr.join("");
+        return resultStr;
+      }
+
+      // 01.08.25
+      // посчитать количество делителей числа n
+      // после корня от n пары делителей будут повторяться, по этому достаточно проверять только делители до корня от n
+      function getDivisorsCnt(n) {
+        let res = 0;
+        const sqrtN = Math.sqrt(n);
+        for (let i = 1; i <= sqrtN; i++) {
+          if (n % i === 0) {
+            res += i === n / i ? 1 : 2;
+          }
+        }
+        return res;
+      }
+
+      // 02.08.25
+      // написать функцию которая проверяет является ли строка пантограммой
+      function isPangram(string) {
+        const array = string
+          .toLowerCase()
+          .replace(/[^a-z]/g, "")
+          .split("");
+        const uniqueArray = new Set(array);
+        return uniqueArray.size === 26;
+      }
+
+      // 03.08.25
+      //
+      function countBy(x, n) {
+        let z = [];
+        for (let i = 1; i <= n; i++) {
+          z.push(x * i);
+        }
+        return z;
+      }
+
+      // 04.08.25
+      // сколько людей в автобусе
+      var number = function (busStops) {
+        // мой вариант
+        // let result = 0
+        // for (let i = 0; i < busStops.length; i++) {
+        //   result += busStops[i][0] - busStops[i][1]
+        // }
+        // return result
+
+        // через ИИ
+        return busStops.reduce((total, [on, off]) => total + on - off, 0);
+      };
+
+      // 06.08.25
+      function getAge(inputString) {
+        return Number(inputString[0]);
+      }
+
+      // 07.08.25
+      // посчитать через сколько лет популяция людей достигнет нужной
+      function nbYear(p0, percent, aug, p) {
+        let people = p0;
+        let count = 0;
+        const per = percent / 100;
+        while (people < p) {
           count++;
+          people = Math.floor(people + people * per + aug);
         }
+        return count;
       }
-      return count
-    }
 
-    // 28.07.25
-    // удалить из массива элементы которые встречаются более n раз
-    function deleteNth(arr, n) {
-      const count = {}
-      return arr.filter(num => {
-        count[num] = (count[num] || 0) + 1
-        return count[num] <= n
-      })
-    }
-
-    // 29.07.25
-    // 
-    function missingWord(nums, str) {
-      const newStr = str.split(' ').join('').toLowerCase()
-      nums.sort((a, b) => a - b)
-
-      for (const num of nums) {
-        if (num >= newStr.length || num < 0) {
-          return 'No mission today'
+      // 09.08.25
+      // какое время проведут люди в очереди
+      function queueTime(customers, n) {
+        // массив касс
+        const cashRegisterArray = [];
+        for (let i = 0; i < n; i++) {
+          cashRegisterArray.push(0);
         }
-      }
-      return nums.map(num => newStr[num]).join('')
-    }
 
-    // 30.07.25
-    // дана строка и массив, раставить символы в строке как дано в массиве
-    function scramble(str, arr) {
-      let resultArr = []
-      for (i = 0; i < arr.length; i++) {
-        resultArr[arr[i]] = str[i]
-      }
-      const resultStr = resultArr.join('')
-      return resultStr
-    }
-
-    // 01.08.25
-    // посчитать количество делителей числа n
-    // после корня от n пары делителей будут повторяться, по этому достаточно проверять только делители до корня от n
-    function getDivisorsCnt(n) {
-      let res = 0
-      const sqrtN = Math.sqrt(n)
-      for (let i = 1; i <= sqrtN; i++) {
-        if (n % i === 0) {
-          res += (i === n / i) ? 1 : 2
+        // находим минимальное значение, и добавляем туда следующего человека в очереди
+        for (const time of customers) {
+          const minIndex = cashRegisterArray.indexOf(
+            Math.min(...cashRegisterArray)
+          );
+          cashRegisterArray[minIndex] += time;
         }
-      }
-      return res
-    }
-
-    // 02.08.25
-    // написать функцию которая проверяет является ли строка пантограммой
-    function isPangram(string) {
-      const array = string.toLowerCase().replace(/[^a-z]/g, '').split('')
-      const uniqueArray = new Set(array)
-      return uniqueArray.size === 26
-    }
-
-    // 03.08.25
-    // 
-    function countBy(x, n) {
-      let z = [];
-      for (let i = 1; i <= n; i++) {
-        z.push(x * i)
-      }
-      return z;
-    }
-
-    // 04.08.25
-    // сколько людей в автобусе
-    var number = function (busStops) {
-      // мой вариант
-      // let result = 0
-      // for (let i = 0; i < busStops.length; i++) {
-      //   result += busStops[i][0] - busStops[i][1]
-      // }
-      // return result
-
-      // через ИИ
-      return busStops.reduce((total, [on, off]) => total + on - off, 0)
-    }
-
-    // 06.08.25
-    function getAge(inputString) {
-      return Number(inputString[0])
-    }
-
-    // 07.08.25
-    // посчитать через сколько лет популяция людей достигнет нужной
-    function nbYear(p0, percent, aug, p) {
-      let people = p0
-      let count = 0
-      const per = percent / 100
-      while (people < p) {
-        count++
-        people = Math.floor(people + people * per + aug)
-      }
-      return count
-    }
-
-    // 09.08.25
-    // какое время проведут люди в очереди
-    function queueTime(customers, n) {
-
-      // массив касс
-      const cashRegisterArray = []
-      for (let i = 0; i < n; i++) {
-        cashRegisterArray.push(0)
+        return Math.max(...cashRegisterArray);
       }
 
-      // находим минимальное значение, и добавляем туда следующего человека в очереди
-      for (const time of customers) {
-        const minIndex = cashRegisterArray.indexOf(Math.min(...cashRegisterArray))
-        cashRegisterArray[minIndex] += time
+      // 10.08.25
+      function checkForFactor(base, factor) {
+        return base % factor === 0 ? true : false;
       }
-      return Math.max(...cashRegisterArray)
-    }
 
-    // 10.08.25
-    function checkForFactor(base, factor) {
-      return base % factor === 0 ? true : false
-    }
+      // 11.08.25
+      // если в массиве a хотябы один элемент равен или больше limit вернуть false иначе true
+      function smallEnough(a, limit) {
+        return Math.max(...a) <= limit;
+      }
 
-    // 11.08.25
-    // если в массиве a хотябы один элемент равен или больше limit вернуть false иначе true
-    function smallEnough(a, limit) {
-      return Math.max(...a) <= limit
-    }
+      // 13.08.25
+      // поменять регистр букв в строке
+      String.prototype.toAlternatingCase = function () {
+        return this.split("")
+          .map((item) => {
+            if (/[a-z]/.test(item)) return item.toUpperCase();
+            if (/[A-Z]/.test(item)) return item.toLowerCase();
+            return item;
+          })
+          .join("");
+      };
 
-    // 13.08.25
-    // поменять регистр букв в строке
-    String.prototype.toAlternatingCase = function () {
-      return this.split('').map(item => {
-        if (/[a-z]/.test(item)) return item.toUpperCase()
-        if (/[A-Z]/.test(item)) return item.toLowerCase()
-        return item
-      }).join('')
-    }
-
-    // 14.08.25 
-    // LeetCode
-    // Наибоьшее число из трёх одинаковых цифр в строке
-    function largestGoodInteger() {
-      const arrayNums = []
-      for (let i = 2; i < num.length; i++) {
-        if (num[i] === num[i - 2] && num[i] === num[i - 1]) {
-          arrayNums.push(num[i])
+      // 14.08.25
+      // LeetCode
+      // Наибоьшее число из трёх одинаковых цифр в строке
+      function largestGoodInteger() {
+        const arrayNums = [];
+        for (let i = 2; i < num.length; i++) {
+          if (num[i] === num[i - 2] && num[i] === num[i - 1]) {
+            arrayNums.push(num[i]);
+          }
         }
-      }
-      if (arrayNums.length === 0) {
-        return ''
-      }
-      if (arrayNums.length === 1) {
-        return arrayNums[0] + arrayNums[0] + arrayNums[0]
-      }
-      let result = arrayNums[0]
-      for (let i = 1; i < arrayNums.length; i++) {
-        if (parseInt(result) < parseInt(arrayNums[i])) {
-          result = arrayNums[i]
+        if (arrayNums.length === 0) {
+          return "";
         }
+        if (arrayNums.length === 1) {
+          return arrayNums[0] + arrayNums[0] + arrayNums[0];
+        }
+        let result = arrayNums[0];
+        for (let i = 1; i < arrayNums.length; i++) {
+          if (parseInt(result) < parseInt(arrayNums[i])) {
+            result = arrayNums[i];
+          }
+        }
+        return result + result + result;
       }
-      return result + result + result
-    };
-    queueTime([1, 2, 3, 10, 2, 1, 1, 1, 1, 30, 30], 10)
-  </script>
-</body>
 
+      function generatePairs(n) {
+        const result = [];
+        for (let a = 0; a <= n; a++) {
+          for (let b = a; b <= n; b++) {
+            result.push([a, b]);
+          }
+        }
+        return result;
+      }
+      console.log(generatePairs(3));
+    </script>
+  </body>
 </html>
