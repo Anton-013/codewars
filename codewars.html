@@ -373,6 +373,16 @@
         }
         return result;
       }
+
+      // 25.08.25
+      function sliding(nums, k) {
+        const result = [];
+        for (let i = 0; i + k <= nums.length; i++) {
+          result.push(Math.max(...nums.slice(i, i + k)));
+        }
+        return result;
+      }
+
       console.log(generatePairs(3));
     </script>
   </body>
