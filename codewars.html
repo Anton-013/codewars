@@ -383,6 +383,15 @@
         return result;
       }
 
+      function between(a, b) {
+        const result = [];
+        while (a <= b) {
+          result.push(a);
+          a++;
+        }
+        return result;
+      }
+
       console.log(generatePairs(3));
     </script>
   </body>
