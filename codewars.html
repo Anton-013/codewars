@@ -402,6 +402,15 @@
         return result;
       }
 
+      function squareSum(numbers) {
+        let result = 0;
+        const resultArray = numbers.map((el) => el * el);
+        for (let i = 0; i < resultArray.length; i++) {
+          result += resultArray[i];
+        }
+        return result;
+      }
+
       console.log(generatePairs(3));
     </script>
   </body>
