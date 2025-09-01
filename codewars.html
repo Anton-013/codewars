@@ -423,6 +423,21 @@
         return resultArr.join("");
       }
 
+      function basicOp(operation, value1, value2) {
+        switch (operation) {
+          case "+":
+            return value1 + value2;
+          case "-":
+            return value1 - value2;
+          case "*":
+            return value1 * value2;
+          case "/":
+            return value1 / value2;
+          default:
+            alert("oops, looks like there was an error");
+        }
+      }
+
       console.log("результат: " + solution("camelCasingTest"));
     </script>
   </body>
