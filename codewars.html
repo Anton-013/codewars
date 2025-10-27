@@ -581,7 +581,7 @@
         'paper': false,
         'scissors': false,
       }
-      
+
       if (rockRes.victory > rockRes.loss) {
         winningResult.rock = true
       }
@@ -591,7 +591,7 @@
       if (scissorsRes.victory > scissorsRes.loss) {
         winningResult.scissors = true
       }
-      
+
       if (winningResult.rock) {
         resultArr.push('rock')
       }
@@ -611,7 +611,26 @@
       return resultStr
     }
 
-    console.log("результат: " + oracle(["paper","scissors","scissors"]));
+    function countPositivesSumNegatives(input) {
+      if (!input || input.length === 0) {
+        return []
+      }
+
+      const filterArr = input.filter(el => el !== 0)
+      let result = [0, 0]
+
+      for (let i = 0; i < filterArr.length; i++) {
+        if (filterArr[i] > 0) {
+          result[0] += 1
+        } else {
+          result[1] += filterArr[i]
+        }
+      }
+
+      return result
+    }
+
+    console.log("результат: " + oracle(["paper", "scissors", "scissors"]));
   </script>
 </body>
 
